@@ -58,7 +58,16 @@ afterEvaluate {
 
                 groupId = 'com.github.commandiron'
                 artifactId = 'wheel-picker-compose'
-                version = '1.1.11'
+            }
+        }
+
+        repositories {
+            maven {
+                url = uri("https://maven.pkg.github.com/KeetaPay/WheelPickerCompose")
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_TOKEN")
+                }
             }
         }
     }
